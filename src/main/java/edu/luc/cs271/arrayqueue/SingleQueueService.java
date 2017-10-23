@@ -1,6 +1,7 @@
 package edu.luc.cs271.arrayqueue;
 
 import java.util.Scanner;
+import java.util.Queue;
 
 public class SingleQueueService {
 
@@ -9,10 +10,12 @@ public class SingleQueueService {
 
   public static void main(final String[] args) throws InterruptedException {
     // TODO read successive input lines until EOF and try to add them to the queue
-
     // queue for customer names
     final SimpleQueue<String> queue = new FixedArrayQueue<>(5);
-
+    while (name = input.nextLine()) != null) {
+          queue.offer(name);
+    }
+    
     // lock object for thread safety
     final Object lock = new Object();
 
