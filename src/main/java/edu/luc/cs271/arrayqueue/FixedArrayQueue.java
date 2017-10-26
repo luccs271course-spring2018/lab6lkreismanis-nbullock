@@ -16,8 +16,8 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
 
   private final E[] data;
 
-  // TODO why do we need an explicit constructor?
-  //we need an explicit contructor 
+  // DONE why do we need an explicit constructor?
+  // We need an explicit constructor because the queue requires to be initialized.
 
   @SuppressWarnings("unchecked")
   public FixedArrayQueue(final int capacity) {
