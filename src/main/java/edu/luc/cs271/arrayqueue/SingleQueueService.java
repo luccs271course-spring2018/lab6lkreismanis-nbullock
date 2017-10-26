@@ -14,7 +14,7 @@ public class SingleQueueService {
     final SimpleQueue<String> queue = new FixedArrayQueue<>(5);
     final Scanner input = new Scanner(System.in);
     String name;
-    while ((input.hasNextLine()) {
+    while (input.hasNextLine()) {
           name = input.nextLine();
           queue.offer(name);
           //queue.add(name);
