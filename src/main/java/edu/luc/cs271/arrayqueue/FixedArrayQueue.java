@@ -44,7 +44,7 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   public E peek() {
     // DONE
     if (size == 0){
-      return null
+      return null;
     }
     return data[Front];
   }
@@ -65,7 +65,7 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   public boolean isEmpty() {
     // Done
     if (rear != null){
-      return false
+      return false;
     }
     return true;
   }
@@ -80,7 +80,7 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
     //  implement using an ArrayList preallocated with the right size
     final ArrayList<E> List = new ArrayList<>(capacity);
     while(rear != null){
-      List.add(rear)
+      List.add(rear);
     }
     return Arrays.asList();
   }
