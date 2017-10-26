@@ -1,7 +1,6 @@
 package edu.luc.cs271.arrayqueue;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class FixedArrayQueue<E> implements SimpleQueue<E> {
@@ -64,10 +63,11 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   @Override
   public boolean isEmpty() {
     // Done
-    if (front == null) {
+    if (front == 0) {
       return true;
+    } else {
+      return false;
     }
-    return false;
   }
 
   @Override
@@ -79,10 +79,12 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   public List<E> asList() {
     //  implement using an ArrayList preallocated with the right size
     final ArrayList<E> List = new ArrayList<>(capacity);
-    int curr = front;
-    while (curr != null) {
-      List.add(rear);
-    }
-    return Arrays.asList();
+    // int newRear;
+    // newRear = rear;
+    // while (newRear != null) {
+    // List.add(newRear);
+    // }
+    // return Arrays.asList();
+    return null;
   }
 }

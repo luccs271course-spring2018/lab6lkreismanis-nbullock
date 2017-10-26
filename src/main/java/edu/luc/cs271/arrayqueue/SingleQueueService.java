@@ -1,7 +1,6 @@
 package edu.luc.cs271.arrayqueue;
 
 import java.util.Scanner;
-import java.util.Queue;
 
 public class SingleQueueService {
 
@@ -12,14 +11,14 @@ public class SingleQueueService {
     // DONE read successive input lines until EOF and try to add them to the queue
     // queue for customer names
     final SimpleQueue<String> queue = new FixedArrayQueue<>(5);
-    final Scanner input = new Scanner(System.in);
-    String name;
-    while (input.hasNextLine()) {
-          name = input.nextLine();
-          queue.offer(name);
-          //queue.add(name);
+    final Scanner newInput = new Scanner(System.in);
+    String newName;
+    while (newInput.hasNextLine()) {
+      newName = newInput.nextLine();
+      queue.offer(newName);
+      // queue.add(name);
     }
-    
+
     // lock object for thread safety
     final Object lock = new Object();
 
@@ -29,10 +28,10 @@ public class SingleQueueService {
             () -> {
               while (true) {
                 String current;
-		int remaining;
+                int remaining;
                 synchronized (lock) {
                   current = queue.poll(); // DONE try to take next name from queue
-		  remaining = queue.size(); // DONE determine resulting size of queue
+                  remaining = queue.size(); // DONE determine resulting size of queue
                 }
                 if (current == null) {
                   System.out.println("no one waiting");
