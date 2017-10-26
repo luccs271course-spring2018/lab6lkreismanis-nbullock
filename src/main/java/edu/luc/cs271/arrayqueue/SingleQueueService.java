@@ -12,8 +12,10 @@ public class SingleQueueService {
     // DONE read successive input lines until EOF and try to add them to the queue
     // queue for customer names
     final SimpleQueue<String> queue = new FixedArrayQueue<>(5);
-  
-    while (name = input.nextLine()) != null) {
+    final Scanner input = new Scanner(System.in);
+    String name;
+    while ((input.hasNextLine()) {
+          name = input.nextLine();
           queue.offer(name);
           //queue.add(name);
     }
@@ -54,7 +56,7 @@ public class SingleQueueService {
       final String name = input.nextLine();
       boolean result;
       synchronized (lock) {
-        result = queue.add(name); // DONE try to add this name to the queue
+        result = queue.offer(name); // DONE try to add this name to the queue
       }
       if (result) {
         System.out.println(name + " has joined the queue");
